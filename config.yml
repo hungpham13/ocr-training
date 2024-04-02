@@ -35,7 +35,7 @@ dataset:
   image_height: 32
   image_max_width: 512
   image_min_width: 32
-  name: gdk
+  name: gplx
   train_annotation: train_annotation.txt
   valid_annotation: test_annotation.txt
 device: cpu

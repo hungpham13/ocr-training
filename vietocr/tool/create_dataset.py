@@ -52,7 +52,10 @@ def createDataset(outputPath, root_dir, annotation_path):
     pbar = tqdm(range(nSamples), ncols = 100, desc='Create {}'.format(outputPath)) 
     for i in pbar:
         try:
-            imageFile, label = annotations[i]
+            if len(annotations[i]) == 1:
+                imageFile, label = annotations[i][0], ''
+            else:
+                imageFile, label = annotations[i]
             imagePath = os.path.join(root_dir, imageFile)
         except Exception as e:
             print(e)
