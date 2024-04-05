@@ -240,9 +240,10 @@ class Trainer():
             for i in range(self.batch_size):
                 img = batch['img'][i].numpy().transpose(1,2,0)
                 sent = self.vocab.decode(batch['tgt_input'].T[i].tolist())
+                img_path = batch['filenames'][i]
                 
                 plt.figure()
-                plt.title('sent: {}'.format(sent), loc='center', fontname=fontname)
+                plt.title('sent: {}, img: {}'.format(sent, img_path), loc='center', fontname=fontname)
                 plt.imshow(img)
                 plt.axis('off')
                 
